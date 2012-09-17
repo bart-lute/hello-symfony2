@@ -1,0 +1,20 @@
+# /etc/hosts:
+#   127.0.0.1	hello-symfony.local
+#
+# DocumentRoot:
+#   /data/projects/symfony/hello-symfony2/web
+
+<VirtualHost *:80>
+
+  ServerName hello-symfony2.local
+  DocumentRoot "/data/projects/symfony/hello-symfony2/web"
+
+  ErrorLog /data/projects/symfony/hello-symfony2/app/logs/hello-symfony2.local-error.log
+  CustomLog /data/projects/symfony/hello-symfony2/app/logs/hello-symfony2.local-access.log combined
+
+  <Directory "/data/projects/symfony/hello-symfony2/web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+</VirtualHost>
